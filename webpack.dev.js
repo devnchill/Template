@@ -8,4 +8,7 @@ module.exports = merge(common, {
     port: 6969,
     watchFiles: ["./src/html/template.html"],
   },
+  stats: {
+    loggingDebug: ["babel-loader"],
+  },
 });
