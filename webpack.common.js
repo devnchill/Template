@@ -1,21 +1,24 @@
+// webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: {
-    app: "./src/js/index.js",
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "Production",
-      template: "./src/html/template.html",
-    }),
-  ],
+  mode: "development",
+  entry: "./src/js/index.js",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
+  devtool: "eval-source-map",
+  devServer: {
+    watchFiles: ["./src/html/template.html"],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/html/template.html",
+    }),
+  ],
   module: {
     rules: [
       {
