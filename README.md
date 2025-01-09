@@ -38,6 +38,3 @@ cd Template
 git checkout <branch-name>
 ```
 
-```
-
-```
