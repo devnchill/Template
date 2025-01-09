@@ -26,4 +26,18 @@
 
 1. Clone the repo:
 2. cd Template
-3. git checkout <branch name>
+
+```bash
+git clone git@github.com:devnchill/Template
+cd Template
+```
+
+3. choose branch as per your need
+
+```bash
+git checkout <branch-name>
+```
+
+```
+
+```
