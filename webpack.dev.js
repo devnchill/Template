@@ -6,9 +6,6 @@ module.exports = merge(common, {
   devtool: "inline-source-map",
   devServer: {
     port: 6969,
-    watchFiles: ["./src/html/template.html"],
-  },
-  stats: {
-    loggingDebug: ["babel-loader"],
+    watchFiles: ["./src/template.html"],
   },
 });

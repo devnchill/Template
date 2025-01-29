@@ -3,29 +3,31 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
+    app: "./src/index.ts",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Production",
+      title: "Development",
       template: "./src/template.html",
     }),
   ],
   output: {
-    filename: "main.js",
+    filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+  },
+  resolve: {
+    extensions: [".ts", ".js"],
   },
   module: {
     rules: [
       {
-        test: /\.(?:js|mjs|cjs)$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: "ts-loader",
           options: {
-            presets: [["@babel/preset-env", { targets: "defaults" }]],
-            plugins: ["@babel/plugin-transform-runtime"],
+            transpileOnly: false,
           },
         },
       },
