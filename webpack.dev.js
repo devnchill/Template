@@ -6,6 +6,11 @@ module.exports = merge(common, {
   devtool: "inline-source-map",
   devServer: {
     port: 6969,
+    open: {
+      app: {
+        name: "google-chrome-stable",
+      },
+    },
     watchFiles: ["./src/template.html"],
   },
 });
